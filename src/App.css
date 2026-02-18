@@ -1,0 +1,86 @@
+:root {
+  --primary: #8e74c9;    /* Main Lavender */
+  --bg: #f4f2f9;         /* Soft Background */
+  --text: #4a3f63;       /* Dark Violet Text */
+  --border: #d1c4e9;     /* Light Border */
+}
+
+.App, .modal-overlay, .time-inputs, .picker-container, .button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text);
+}
+
+.picker-container, .button-group, .time-inputs { gap: 15px; margin-bottom: 25px; }
+
+input {
+  padding: 12px;
+  width: 210px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input:hover { border-color: var(--primary); box-shadow: 0 0 8px rgba(142, 116, 201, 0.2); }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 63, 99, 0.4);
+  z-index: 1000;
+}
+
+.calendar-box, .time-only-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 300px;
+  border-top: 6px solid var(--primary);
+}
+
+.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-top: 15px; }
+
+.grid button {
+  padding: 10px;
+  border: none;
+  background: #fdfbff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.grid button:hover { background: var(--primary); color: white; }
+
+.submit-btn, .reset-btn, .done-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.submit-btn, .done-btn { background: var(--primary); }
+.reset-btn { background: #b3a9c9; }
+.submit-btn:active { transform: scale(0.95); }
+
+.result-display {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.green-text { color: #28a745; font-weight: bold; }
