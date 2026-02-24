@@ -3,7 +3,6 @@ import { useState } from 'react';
 export const useCalendar = () => {
   const [viewDate, setViewDate] = useState(new Date());
   
- 
   const [hours, setHours] = useState("12");
   const [minutes, setMinutes] = useState("00");
   const [ampm, setAmpm] = useState("AM");
@@ -19,8 +18,22 @@ export const useCalendar = () => {
     setViewDate(new Date(year, viewDate.getMonth(), 1));
   };
 
+  const jumpTo = (y, m) => {
+    setViewDate(new Date(y, m, 1));
+  };
+
   return { 
-    viewDate, hours, setHours, minutes, setMinutes, ampm, setAmpm,
-    getDaysInMonth, getFirstDay, changeMonth, changeYear 
+    viewDate, 
+    hours, 
+    setHours, 
+    minutes, 
+    setMinutes, 
+    ampm, 
+    setAmpm,
+    getDaysInMonth, 
+    getFirstDay, 
+    changeMonth, 
+    changeYear,
+    jumpTo 
   };
 };
